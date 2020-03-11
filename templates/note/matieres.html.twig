@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Matières</h2><br>
+            <div>
+                <p style="font-size: 22px;">Ajouter une matiere :</p>
+                {{ form_start(formMatiere) }}
+                {{ form_end(formMatiere) }}
+            </div>
+            <br>
+            {% if matieres is empty %}
+                <p>Il n'y a pas de matière.</p>
+            {% else %}
+                <ul>
+                    {% for matiere in matieres %}
+                        <li {{ matiere.id }}>{{ matiere.nom }}<br>Coefficient : {{ matiere.coef }}<br>
+                            <button class="btn btn-warning"><a href="{{ path('singleMatiere', {id: matiere.id}) }}">Voir la matière</a></button>
+                        </li><br>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}

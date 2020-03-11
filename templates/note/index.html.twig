@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-6">
+            <h2>Notes</h2><br>
+            {# <a href="{{ path('series') }}">
+                 <button class="btn btn-warning">Page Series</button>
+             </a>
+         </div>#}
+            <div>
+                <p style="font-size: 22px;">Ajouter une note :</p>
+                {{ form_start(formNote) }}
+                {{ form_rest(formNote) }}
+                <select name="matiereId">
+                    {% for matiere in matieres %}
+                        <option value="{{ matiere.id }}">{{ matiere.nom |capitalize }} -- Coeff : {{ matiere.coef }}</option>
+                    {% endfor %}
+                </select><br><br>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+                {{ form_end(formNote) }}
+            </div>
+            <br>
+            {% if notes is empty %}
+                <p>Il n'y a pas de note renseignée, voulez-vous accéder à l'espace matières ?</p>
+                <button class="btn btn-warning"><a href="{{ path('matieres')}}">Voir les matières</a></button>
+            {% else %}
+                <ul>
+                    {% for note in notes %}
+                        <li {{ note.id }}>{{ note.resultat }}</li ><br>
+                    {% endfor %}
+
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
