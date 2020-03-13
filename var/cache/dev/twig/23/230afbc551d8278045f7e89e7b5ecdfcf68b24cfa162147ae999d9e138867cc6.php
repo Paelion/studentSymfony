@@ -60,8 +60,10 @@ class __TwigTemplate_d485fbc6f3f8848571faccd2e226ebe47252be359d1733b01d34e53b311
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Intitulé de la matière : ";
+            <h2>";
         // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Intitulé de la matière"), "html", null, true);
+        echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["matiere"]) || array_key_exists("matiere", $context) ? $context["matiere"] : (function () { throw new RuntimeError('Variable "matiere" does not exist.', 8, $this->source); })()), "nom", [], "any", false, false, false, 8), "html", null, true);
         echo "</h2><br>
             <br>
@@ -76,11 +78,16 @@ class __TwigTemplate_d485fbc6f3f8848571faccd2e226ebe47252be359d1733b01d34e53b311
                 <a href=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("remove", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["matiere"]) || array_key_exists("matiere", $context) ? $context["matiere"] : (function () { throw new RuntimeError('Variable "matiere" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
-        echo "\"><button class=\"btn btn-danger\">Supprimer cette matière</button></a>
+        echo "\"><button class=\"btn btn-danger\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Supprimer cette matière"), "html", null, true);
+        echo "</button></a>
             </ul>
             <br>
             <br>
-            <h3>Modifier la matière :</h3><br>
+            <h3>";
+        // line 19
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Modifier la matière"), "html", null, true);
+        echo "</h3><br>
             ";
         // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUpdate"]) || array_key_exists("formUpdate", $context) ? $context["formUpdate"] : (function () { throw new RuntimeError('Variable "formUpdate" does not exist.', 20, $this->source); })()), 'form_start');
@@ -110,7 +117,7 @@ class __TwigTemplate_d485fbc6f3f8848571faccd2e226ebe47252be359d1733b01d34e53b311
 
     public function getDebugInfo()
     {
-        return array (  90 => 21,  86 => 20,  78 => 15,  73 => 13,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  97 => 21,  93 => 20,  89 => 19,  80 => 15,  75 => 13,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -122,18 +129,18 @@ class __TwigTemplate_d485fbc6f3f8848571faccd2e226ebe47252be359d1733b01d34e53b311
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Intitulé de la matière : {{ matiere.nom }}</h2><br>
+            <h2>{{ \"Intitulé de la matière\"| trans }} {{ matiere.nom }}</h2><br>
             <br>
             <ul>
                 <div>
                     <br>
                     Coefficient : {{ matiere.coef }}
                 </div>
-                <a href=\"{{path(\"remove\", {id: matiere.id})}}\"><button class=\"btn btn-danger\">Supprimer cette matière</button></a>
+                <a href=\"{{path(\"remove\", {id: matiere.id})}}\"><button class=\"btn btn-danger\">{{ \"Supprimer cette matière\"| trans }}</button></a>
             </ul>
             <br>
             <br>
-            <h3>Modifier la matière :</h3><br>
+            <h3>{{ \"Modifier la matière\"| trans }}</h3><br>
             {{ form_start(formUpdate) }}
             {{ form_end(formUpdate) }}
         </div>

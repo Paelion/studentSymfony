@@ -25,6 +25,7 @@ class NoteController extends AbstractController
             ->getRepository(Note::class)
             ->findAll();
 
+
         $matiere = $this->getDoctrine()
             ->getRepository(matiere::class)
             ->findAll();
@@ -64,6 +65,7 @@ class NoteController extends AbstractController
             $matiereRepository = $this->getDoctrine()
                 ->getRepository(matiere::class)
                 ->findAll();
+
 
             $form = $this->createForm(MatiereType::class, $matiere);
             $form->handleRequest($request);
@@ -126,5 +128,7 @@ class NoteController extends AbstractController
 
         return $this->redirectToRoute('matieres');
     }
+
+
 
 }

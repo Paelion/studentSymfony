@@ -67,13 +67,17 @@ class __TwigTemplate_0872511c493d7b53f46f2ee75eba202f0a7d7a2dbef26cfcf8c79b37cb2
                     <a class=\"nav-link\" href=\"";
         // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Notes</a>
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Notes"), "html", null, true);
+        echo "</a>
                 </li>
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
         // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("matieres");
-        echo "\">Matières</a>
+        echo "\">";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Matières"), "html", null, true);
+        echo "</a>
                 </li>
             </ul>
         </div>
@@ -158,7 +162,7 @@ class __TwigTemplate_0872511c493d7b53f46f2ee75eba202f0a7d7a2dbef26cfcf8c79b37cb2
 
     public function getDebugInfo()
     {
-        return array (  138 => 30,  126 => 28,  114 => 7,  101 => 5,  92 => 31,  90 => 30,  87 => 29,  85 => 28,  75 => 21,  69 => 18,  57 => 8,  55 => 7,  50 => 5,  44 => 1,);
+        return array (  142 => 30,  130 => 28,  118 => 7,  105 => 5,  96 => 31,  94 => 30,  91 => 29,  89 => 28,  77 => 21,  69 => 18,  57 => 8,  55 => 7,  50 => 5,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -180,10 +184,10 @@ class __TwigTemplate_0872511c493d7b53f46f2ee75eba202f0a7d7a2dbef26cfcf8c79b37cb2
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
             <ul class=\"navbar-nav\">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"{{path('home')}}\">Notes</a>
+                    <a class=\"nav-link\" href=\"{{path('home')}}\">{{ \"Notes\"| trans }}</a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"{{path('matieres')}}\">Matières</a>
+                    <a class=\"nav-link\" href=\"{{path('matieres')}}\">{{ \"Matières\"| trans }}</a>
                 </li>
             </ul>
         </div>

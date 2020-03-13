@@ -60,82 +60,111 @@ class __TwigTemplate_4e625839c7373291a2e83b8f763f8f120c64f0144030d2cc5e7fa31fe0a
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Notes</h2><br>
-            ";
-        // line 13
-        echo "            <div>
-                <p style=\"font-size: 22px;\">Ajouter une note :</p>
+            <h2>";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Notes"), "html", null, true);
+        echo "</h2>
+            <br>
+
+            <div>
+                <p style=\"font-size: 22px;\">";
+        // line 12
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Ajouter une note"), "html", null, true);
+        echo "</p>
                 ";
-        // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 15, $this->source); })()), 'form_start');
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 13, $this->source); })()), 'form_start');
         echo "
                 ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 16, $this->source); })()), 'rest');
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 14, $this->source); })()), 'rest');
         echo "
                 <select name=\"matiereId\">
                     ";
-        // line 18
+        // line 16
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["matieres"]) || array_key_exists("matieres", $context) ? $context["matieres"] : (function () { throw new RuntimeError('Variable "matieres" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["matieres"]) || array_key_exists("matieres", $context) ? $context["matieres"] : (function () { throw new RuntimeError('Variable "matieres" does not exist.', 16, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["matiere"]) {
-            // line 19
+            // line 17
             echo "                        <option value=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "id", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "id", [], "any", false, false, false, 17), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "nom", [], "any", false, false, false, 19)), "html", null, true);
-            echo " -- Coeff : ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "coef", [], "any", false, false, false, 19), "html", null, true);
+            echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "nom", [], "any", false, false, false, 17)), "html", null, true);
+            echo " -- Coeff
+                            : ";
+            // line 18
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["matiere"], "coef", [], "any", false, false, false, 18), "html", null, true);
             echo "</option>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['matiere'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 21
+        // line 20
         echo "                </select><br><br>
-                <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>
+                <button type=\"submit\" class=\"btn btn-primary\">";
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Envoyer"), "html", null, true);
+        echo "</button>
                 ";
-        // line 23
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 23, $this->source); })()), 'form_end');
+        // line 22
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new RuntimeError('Variable "formNote" does not exist.', 22, $this->source); })()), 'form_end');
         echo "
             </div>
             <br>
             ";
-        // line 26
-        if (twig_test_empty((isset($context["notes"]) || array_key_exists("notes", $context) ? $context["notes"] : (function () { throw new RuntimeError('Variable "notes" does not exist.', 26, $this->source); })()))) {
-            // line 27
+        // line 25
+        if (twig_test_empty((isset($context["notes"]) || array_key_exists("notes", $context) ? $context["notes"] : (function () { throw new RuntimeError('Variable "notes" does not exist.', 25, $this->source); })()))) {
+            // line 26
             echo "                <p>Il n'y a pas de note renseignée, voulez-vous accéder à l'espace matières ?</p>
                 <button class=\"btn btn-warning\"><a href=\"";
-            // line 28
+            // line 27
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("matieres");
-            echo "\">Voir les matières</a></button>
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Voir les matières"), "html", null, true);
+            echo "</a></button>
             ";
         } else {
-            // line 30
+            // line 29
             echo "                <ul>
                     ";
-            // line 31
+            // line 30
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["notes"]) || array_key_exists("notes", $context) ? $context["notes"] : (function () { throw new RuntimeError('Variable "notes" does not exist.', 31, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["notes"]) || array_key_exists("notes", $context) ? $context["notes"] : (function () { throw new RuntimeError('Variable "notes" does not exist.', 30, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["note"]) {
-                // line 32
+                // line 31
                 echo "                        <li ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["note"], "id", [], "any", false, false, false, 32), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["note"], "id", [], "any", false, false, false, 31), "html", null, true);
                 echo ">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["note"], "resultat", [], "any", false, false, false, 32), "html", null, true);
-                echo "</li ><br>
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["note"], "resultat", [], "any", false, false, false, 31), "html", null, true);
+                echo "
+
+                            ";
+                // line 33
+                if ( !(null === twig_get_attribute($this->env, $this->source, $context["note"], "matiereId", [], "any", false, false, false, 33))) {
+                    // line 34
+                    echo "                                <p>Matière: ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["note"], "matiereId", [], "any", false, false, false, 34), "nom", [], "any", false, false, false, 34), "html", null, true);
+                    echo " coef ";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["note"], "matiereId", [], "any", false, false, false, 34), "coef", [], "any", false, false, false, 34), "html", null, true);
+                    echo "</p>
+                            ";
+                }
+                // line 36
+                echo "                        </li><br>
                     ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['note'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 34
+            // line 38
             echo "
+
                 </ul>
+
             ";
         }
-        // line 37
+        // line 43
         echo "        </div>
     </div>
     ";
@@ -156,7 +185,7 @@ class __TwigTemplate_4e625839c7373291a2e83b8f763f8f120c64f0144030d2cc5e7fa31fe0a
 
     public function getDebugInfo()
     {
-        return array (  139 => 37,  134 => 34,  123 => 32,  119 => 31,  116 => 30,  111 => 28,  108 => 27,  106 => 26,  100 => 23,  96 => 21,  83 => 19,  79 => 18,  74 => 16,  70 => 15,  66 => 13,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  168 => 43,  161 => 38,  154 => 36,  146 => 34,  144 => 33,  136 => 31,  132 => 30,  129 => 29,  122 => 27,  119 => 26,  117 => 25,  111 => 22,  107 => 21,  104 => 20,  96 => 18,  89 => 17,  85 => 16,  80 => 14,  76 => 13,  72 => 12,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -168,34 +197,40 @@ class __TwigTemplate_4e625839c7373291a2e83b8f763f8f120c64f0144030d2cc5e7fa31fe0a
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Notes</h2><br>
-            {# <a href=\"{{ path('series') }}\">
-                 <button class=\"btn btn-warning\">Page Series</button>
-             </a>
-         </div>#}
+            <h2>{{ \"Notes\" | trans }}</h2>
+            <br>
+
             <div>
-                <p style=\"font-size: 22px;\">Ajouter une note :</p>
+                <p style=\"font-size: 22px;\">{{ \"Ajouter une note\"| trans }}</p>
                 {{ form_start(formNote) }}
                 {{ form_rest(formNote) }}
                 <select name=\"matiereId\">
                     {% for matiere in matieres %}
-                        <option value=\"{{ matiere.id }}\">{{ matiere.nom |capitalize }} -- Coeff : {{ matiere.coef }}</option>
+                        <option value=\"{{ matiere.id }}\">{{ matiere.nom |capitalize }} -- Coeff
+                            : {{ matiere.coef }}</option>
                     {% endfor %}
                 </select><br><br>
-                <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>
+                <button type=\"submit\" class=\"btn btn-primary\">{{ \"Envoyer\"| trans }}</button>
                 {{ form_end(formNote) }}
             </div>
             <br>
             {% if notes is empty %}
                 <p>Il n'y a pas de note renseignée, voulez-vous accéder à l'espace matières ?</p>
-                <button class=\"btn btn-warning\"><a href=\"{{ path('matieres')}}\">Voir les matières</a></button>
+                <button class=\"btn btn-warning\"><a href=\"{{ path('matieres') }}\">{{ \"Voir les matières\"| trans }}</a></button>
             {% else %}
                 <ul>
                     {% for note in notes %}
-                        <li {{ note.id }}>{{ note.resultat }}</li ><br>
+                        <li {{ note.id }}>{{ note.resultat }}
+
+                            {% if note.matiereId is not null %}
+                                <p>Matière: {{ note.matiereId.nom }} coef {{ note.matiereId.coef }}</p>
+                            {% endif %}
+                        </li><br>
                     {% endfor %}
 
+
                 </ul>
+
             {% endif %}
         </div>
     </div>

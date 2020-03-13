@@ -60,9 +60,15 @@ class __TwigTemplate_50eaf05b1e8cbe90560d144ed7eb6c60e388a5f4ad91624ea0f4eeb4849
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Matières</h2><br>
+            <h2>";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Matière"), "html", null, true);
+        echo "</h2><br>
             <div>
-                <p style=\"font-size: 22px;\">Ajouter une matiere :</p>
+                <p style=\"font-size: 22px;\">";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Ajouter une matière"), "html", null, true);
+        echo "</p>
                 ";
         // line 11
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formMatiere"]) || array_key_exists("formMatiere", $context) ? $context["formMatiere"] : (function () { throw new RuntimeError('Variable "formMatiere" does not exist.', 11, $this->source); })()), 'form_start');
@@ -77,7 +83,9 @@ class __TwigTemplate_50eaf05b1e8cbe90560d144ed7eb6c60e388a5f4ad91624ea0f4eeb4849
         // line 15
         if (twig_test_empty((isset($context["matieres"]) || array_key_exists("matieres", $context) ? $context["matieres"] : (function () { throw new RuntimeError('Variable "matieres" does not exist.', 15, $this->source); })()))) {
             // line 16
-            echo "                <p>Il n'y a pas de matière.</p>
+            echo "                <p>";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Il n'y a pas de matière"), "html", null, true);
+            echo "</p>
             ";
         } else {
             // line 18
@@ -98,7 +106,9 @@ class __TwigTemplate_50eaf05b1e8cbe90560d144ed7eb6c60e388a5f4ad91624ea0f4eeb4849
                             <button class=\"btn btn-warning\"><a href=\"";
                 // line 21
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("singleMatiere", ["id" => twig_get_attribute($this->env, $this->source, $context["matiere"], "id", [], "any", false, false, false, 21)]), "html", null, true);
-                echo "\">Voir la matière</a></button>
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("Voir la matière"), "html", null, true);
+                echo "</a></button>
                         </li><br>
                     ";
             }
@@ -130,7 +140,7 @@ class __TwigTemplate_50eaf05b1e8cbe90560d144ed7eb6c60e388a5f4ad91624ea0f4eeb4849
 
     public function getDebugInfo()
     {
-        return array (  113 => 26,  109 => 24,  100 => 21,  91 => 20,  87 => 19,  84 => 18,  80 => 16,  78 => 15,  72 => 12,  68 => 11,  59 => 4,  52 => 3,  35 => 1,);
+        return array (  123 => 26,  119 => 24,  108 => 21,  99 => 20,  95 => 19,  92 => 18,  86 => 16,  84 => 15,  78 => 12,  74 => 11,  70 => 10,  65 => 8,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -142,20 +152,20 @@ class __TwigTemplate_50eaf05b1e8cbe90560d144ed7eb6c60e388a5f4ad91624ea0f4eeb4849
 <div class=\"container mt-5\">
     <div class=\"row\">
         <div class=\"col-6\">
-            <h2>Matières</h2><br>
+            <h2>{{ \"Matière\"| trans }}</h2><br>
             <div>
-                <p style=\"font-size: 22px;\">Ajouter une matiere :</p>
+                <p style=\"font-size: 22px;\">{{ \"Ajouter une matière\"| trans }}</p>
                 {{ form_start(formMatiere) }}
                 {{ form_end(formMatiere) }}
             </div>
             <br>
             {% if matieres is empty %}
-                <p>Il n'y a pas de matière.</p>
+                <p>{{ \"Il n'y a pas de matière\"| trans }}</p>
             {% else %}
                 <ul>
                     {% for matiere in matieres %}
                         <li {{ matiere.id }}>{{ matiere.nom }}<br>Coefficient : {{ matiere.coef }}<br>
-                            <button class=\"btn btn-warning\"><a href=\"{{ path('singleMatiere', {id: matiere.id}) }}\">Voir la matière</a></button>
+                            <button class=\"btn btn-warning\"><a href=\"{{ path('singleMatiere', {id: matiere.id}) }}\">{{ \"Voir la matière\"| trans }}</a></button>
                         </li><br>
                     {% endfor %}
                 </ul>

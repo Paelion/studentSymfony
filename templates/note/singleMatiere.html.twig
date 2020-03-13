@@ -5,18 +5,18 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-6">
-            <h2>Intitulé de la matière : {{ matiere.nom }}</h2><br>
+            <h2>{{ "Intitulé de la matière"| trans }} {{ matiere.nom }}</h2><br>
             <br>
             <ul>
                 <div>
                     <br>
                     Coefficient : {{ matiere.coef }}
                 </div>
-                <a href="{{path("remove", {id: matiere.id})}}"><button class="btn btn-danger">Supprimer cette matière</button></a>
+                <a href="{{path("remove", {id: matiere.id})}}"><button class="btn btn-danger">{{ "Supprimer cette matière"| trans }}</button></a>
             </ul>
             <br>
             <br>
-            <h3>Modifier la matière :</h3><br>
+            <h3>{{ "Modifier la matière"| trans }}</h3><br>
             {{ form_start(formUpdate) }}
             {{ form_end(formUpdate) }}
         </div>
